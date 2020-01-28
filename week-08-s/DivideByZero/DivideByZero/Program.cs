@@ -30,7 +30,7 @@ namespace DivideByZero
             int divider = 10;
             int userNumberInput;
             int result;
-
+            char userInput;
             while (true)
             {
                 try
@@ -47,6 +47,16 @@ namespace DivideByZero
                 catch (FormatException)
                 {
                     Console.WriteLine("wrong input");
+                }
+                Console.WriteLine(@"You want repeat? press ""y"" if yes and ""n"" if no :");
+                userInput = Console.ReadKey(true).KeyChar;
+                if (userInput == 'y')
+                {
+                    continue;
+                }
+                if (userInput == 'n')
+                {
+                    break;
                 }
             }
         }
