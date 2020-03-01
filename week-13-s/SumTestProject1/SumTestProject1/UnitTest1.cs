@@ -1,36 +1,54 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace SumTestProject1
 {
     public class SumUtilTests
     {
-        [Fact]
-        public void SumTestEmptyList()
+        readonly Sum testSum = new Sum(); // arrange (for all tests)
+
+        [Theory]
+        [InlineData(0, new int[] { })]
+        [InlineData(3, new int[] { 3 })]
+        [InlineData(28, new int[] { 1, 2, 3, 8, 5, 9 })]
+
+        public void TestSumArrayExceptNull(int expected, int[] testingList)
         {
-            List<int> numbers = new List<int>();
-            Assert.Equal(0, Sum.SumArray(numbers));
+            Assert.Equal(expected, testSum.SumArray(testingList.ToList()));
+        }
+
+        /* line 12 to 20 do the same test like methods: 
+            TestSumArrayWithEmptyList, TestSumArrayWithOneElement and TestSumArrayWithMultipleElement
+         */
+
+        [Fact]
+        public void TestSumArrayWithEmptyList()
+        {
+            List<int> numbers = new List<int>(); 
+            Assert.Equal(0, testSum.SumArray(numbers)); // assert + act
         }
 
         [Fact]
-        public void SumTestOneElement()
+        public void TestSumArrayWithOneElement()
         {
-            List<int> numbers = new List<int> { 3 };
-            Assert.Equal(3, Sum.SumArray(numbers));
+            List<int> numbers = new List<int> { 3 }; 
+            var output = testSum.SumArray(numbers); // act
+            Assert.Equal(3, output); // asert
         }
 
         [Fact]
-        public void SumTestMultipleElement()
+        public void TestSumArrayWithMultipleElement()
         {
-            List<int> numbers = new List<int> { 1, 2, 3, 8, 5, 9 };
-            Assert.Equal(28, Sum.SumArray(numbers));
+            Assert.Equal(28, testSum.SumArray(new List<int> { 1, 2, 3, 8, 5, 9 })); 
         }
 
         [Fact]
-        public void SumTestNull()
+        public void TestSumArrayWithNull()
         {
             List<int> numbers = null;
-            Assert.Equal(0, Sum.SumArray(numbers));
+            Assert.Equal(0, testSum.SumArray(numbers)); // assert + act
         }
     }
 }
