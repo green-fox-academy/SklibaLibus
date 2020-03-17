@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Administrator\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_FileTask.-175388452.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Administrator\Dropbox\GFA\SklibaLibus\IOFiles\FileTask" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="file01.txt" t="Include" />
+      <e p="file02.txt" t="Include" />
+      <e p="FileTask.csproj" t="IncludeRecursive" />
+      <e p="FileTask.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="FileTask.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+    </e>
+  </component>
+</project>
